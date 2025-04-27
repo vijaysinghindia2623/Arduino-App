@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F04D4D"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:background="@color/cardview_dark_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sensor data->"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:padding="12dp"
+            android:gravity="start" />
+    </ScrollView>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphv"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@color/material_dynamic_neutral70" />
+
+
+
+    <TextView
+        android:id="@+id/tvConnectionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="Disconnected"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnExportCsv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="View CSV File" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnClearData"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:text="Clear Data" />
+
+    </LinearLayout>
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="true"
+        android:text="ToggleButton" />
+
+
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E6B012"
+        android:text="Connect Bluetooth"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

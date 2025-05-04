@@ -176,7 +176,6 @@ class Live_Data : AppCompatActivity() {
         } else {
             scrollView.visibility = View.GONE
             graphView.visibility = View.GONE
-            btnViewCsv.visibility = View.GONE
             btnClearData.visibility = View.GONE
             toggleButton.visibility = View.GONE
         }
@@ -331,7 +330,7 @@ class Live_Data : AppCompatActivity() {
                         }
                     }
                 }
-                Thread.sleep(200)
+                Thread.sleep(1000)
             }
         } catch (e: IOException) {
             e.printStackTrace()

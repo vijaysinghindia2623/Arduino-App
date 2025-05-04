@@ -1,5 +1,6 @@
 package com.mico_ji.arduinoapp
 
+import java.util.Date
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -48,7 +49,7 @@ class CsvFilesActivity : AppCompatActivity() {
         }
 
         listView.onItemLongClickListener = AdapterView.OnItemLongClickListener { _, _, position, _ ->
-            shareCsvFile(csvFiles[position])
+            showFileOptionsDialog(csvFiles[position])
             true
         }
     }
@@ -109,6 +110,69 @@ class CsvFilesActivity : AppCompatActivity() {
         } catch (e: Exception) {
             showToast("Error sharing file")
         }
+    }
+
+
+
+
+    private fun showFileOptionsDialog(file: File) {
+        val options = arrayOf("View", "Delete", "Share", "File Properties")
+
+        AlertDialog.Builder(this)
+            .setTitle("File Options")
+            .setItems(options) { dialog, which ->
+                when (which) {
+                    0 -> openCsvFile(file)
+                    1 -> confirmDeleteFile(file)
+                    2 -> shareCsvFile(file)
+                    3 -> showFileProperties(file)
+                }
+            }
+            .create()
+            .show()
+    }
+
+    private fun deleteFile(file: File) {
+        if (file.delete()) {
+            // Refresh the list
+            csvFiles = csvFiles.filter { it.path != file.path }
+            (findViewById<ListView>(R.id.csvListView).adapter as ArrayAdapter<String>).apply {
+                clear()
+                addAll(csvFiles.map { it.name })
+                notifyDataSetChanged()
+            }
+            Toast.makeText(this, "File deleted", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Failed to delete file", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    private fun confirmDeleteFile(file: File) {
+        AlertDialog.Builder(this)
+            .setTitle("Confirm Delete")
+            .setMessage("Are you sure you want to delete ${file.name}?")
+            .setPositiveButton("Delete") { _, _ ->
+                deleteFile(file)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+
+    private fun showFileProperties(file: File) {
+        val properties = """
+        Name: ${file.name}
+        Size: ${file.length()} bytes
+        Path: ${file.absolutePath}
+        Modified: ${Date(file.lastModified())}
+    """.trimIndent()
+
+        AlertDialog.Builder(this)
+            .setTitle("File Properties")
+            .setMessage(properties)
+            .setPositiveButton("OK", null)
+            .show()
     }
 
     private fun showToast(message: String) {

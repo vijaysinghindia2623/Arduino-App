@@ -19,14 +19,16 @@ This project is a Bluetooth-controlled rover car built using **Arduino Uno**, **
 
 ## 📱 App Screenshots
 Rover Car Module -> 
-![4](https://github.com/user-attachments/assets/f236a2dc-849f-4df3-9a30-4cf6e0efbd21)
+![1](https://github.com/user-attachments/assets/e67c65d1-23e0-42e8-b393-e262df4d2d47)
+
 
 Live Sensor Module ->
-![6](https://github.com/user-attachments/assets/dfa9f966-93ae-4c58-bc24-e7ce8c1671b5)
+![2](https://github.com/user-attachments/assets/a4318830-b3e0-49cd-a09a-ecf0ade7e944)
 
 
 Live Senosr Module -> CSV Manager (works when even when no Bluetooth connected ->
-![7](https://github.com/user-attachments/assets/3cada593-e7ca-4db4-9fe4-8d6fffd5f5e6)
+![3](https://github.com/user-attachments/assets/1d926a22-b863-4825-a682-61c88f52b55e)
+
 
 ## 🚗 Hardware Components Used
 - Arduino Uno

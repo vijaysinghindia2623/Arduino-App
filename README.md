@@ -18,8 +18,15 @@ This project is a Bluetooth-controlled rover car built using **Arduino Uno**, **
 - Export sensor logs to a CSV file
 
 ## 📱 App Screenshots
-![Screenshot_20250506-173916](https://github.com/user-attachments/assets/0e1c854c-26a1-4098-a89f-9ea0febfb341)
+Rover Car Module -> 
+![4](https://github.com/user-attachments/assets/f236a2dc-849f-4df3-9a30-4cf6e0efbd21)
 
+Live Sensor Module ->
+![6](https://github.com/user-attachments/assets/dfa9f966-93ae-4c58-bc24-e7ce8c1671b5)
+
+
+Live Senosr Module -> CSV Manager (works when even when no Bluetooth connected ->
+![7](https://github.com/user-attachments/assets/3cada593-e7ca-4db4-9fe4-8d6fffd5f5e6)
 
 ## 🚗 Hardware Components Used
 - Arduino Uno

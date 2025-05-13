@@ -7,13 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.mico_ji.arduinoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Initialize the ViewBinding object
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        var binding = ActivityMainBinding.inflate(layoutInflater)
 
         // Set the root view of the layout
         setContentView(binding.root)

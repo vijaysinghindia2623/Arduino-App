@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         // Set the root view of the layout
         setContentView(binding.root)
 
-        // Set up listeners
+        // Setting up listeners
         binding.imageRemoteCar.setOnClickListener {
             // Start RemoteCarActivity
             startActivity(Intent(this, Remote_Control::class.java))
